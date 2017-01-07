@@ -1,4 +1,4 @@
-export const nameMap: {[key: string]: string]} = {
+export const nameMap: {[key: string]: string} = {
 	READY: "ready",
 
 };
