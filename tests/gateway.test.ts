@@ -12,7 +12,7 @@ describe("GatewayManager", () => {
 
 		const client = new Client({});
 
-		return client.connect({timeout: 50, reconnectTries: 1})
+		return client.connect({timeout: 1, reconnectTries: 0})
 			.then(() => {
 				throw "Didn't timeout";
 			})
@@ -33,7 +33,7 @@ describe("GatewayManager", () => {
 
 		const client = new Client({});
 
-		return client.connect({reconnectTries: 1})
+		return client.connect({reconnectTries: 0})
 			.then(() => {
 				throw "Didn't error";
 			})

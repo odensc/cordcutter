@@ -64,11 +64,12 @@ class GatewayManager extends EventEmitter
 			// on open, clear timeout and finish up
 			this.ws.once("open", () => {
 				clearTimeout(timeoutId);
+				this.ws.removeAllListeners("error");
 				resolve();
 				this.onSocketOpen();
 			});
 			// retry on error
-			this.ws.once("error", retry.bind(this, resolve, reject));
+			this.ws.on("error", retry.bind(this, resolve, reject));
 			timeoutId = setTimeout(() => {
 				// retry on timeout
 				if (this.ws.readyState != this.ws.OPEN)
