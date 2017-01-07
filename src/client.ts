@@ -54,8 +54,6 @@ class Client extends EventEmitter
 
 		return this.gatewayManager.connect(connectOptions);
 	}
-
-	declare o = null;
 }
 
 export interface ClientOptions
