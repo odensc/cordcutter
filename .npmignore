@@ -1,0 +1,6 @@
+docs
+tests
+.travis.yml
+jestconfig.json
+.editorconfig
+.gitignore
